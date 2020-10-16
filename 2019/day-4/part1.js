@@ -1,8 +1,9 @@
 
 let startingNum = 134792;
+let endingNum = 675810;
 let count = 0
 
-for (startingNum; startingNum < 675810; startingNum += 1) {
+for (startingNum; startingNum < endingNum; startingNum += 1) {
     let digits = startingNum.toString().split('');
     let splitDigits = digits.map(Number)
         if (splitDigits[0] <= splitDigits[1] && splitDigits[1] <= splitDigits[2] &&
