@@ -9,7 +9,7 @@
     "random": "^2.2.0"
   },
   "scripts": {
-    "start": "echo \"Error: no test specified\" && exit 1"
+    "start": "node aocd1.js"
   },
   "repository": {
     "type": "git",
