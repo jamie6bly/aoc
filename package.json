@@ -1,0 +1,24 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "a repo for challenges",
+  "type":"module",
+  "main": "index.js",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "random": "^2.2.0"
+  },
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamie6bly/aoc.git"
+  },
+  "author": "Jamie Blyth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamie6bly/aoc/issues"
+  },
+  "homepage": "https://github.com/jamie6bly/aoc#readme"
+}
