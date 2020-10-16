@@ -16,7 +16,7 @@ for (startingNum; startingNum < endingNum; startingNum += 1) {
     
                     }
                         
-                }
+    
         }
     console.log(count)
 }
