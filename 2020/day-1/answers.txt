@@ -1,0 +1,2 @@
+The answer for part 1 is 55776
+The answer for part 2 is 223162626
