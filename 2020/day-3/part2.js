@@ -4,44 +4,37 @@ const input = readFileSync(`./input.txt`, 'utf-8');
 const pisteMap = input.split('\n')
 
 let pisteLine
-let i = 0
-let newPosition
 let newPisteLine
-let finalPosition
+let pisteLength = 30
 let counter = 0
+
 
 const pisteSplitter = (piste) => {
 return pisteLine = piste.split('')
 }
 
 const moveAlongThree = (Position, acrossValue) => {
-    newPosition = Position + acrossValue
-    if (newPosition == 31){
+    let newPosition = Position + acrossValue
+    if (newPosition == pisteLength + 1){
         newPosition = 0
     }
-    else if (newPosition == 32){
+    else if (newPosition == pisteLength + 2){
         newPosition = 1
     }
-    else if (newPosition == 33){
+    else if (newPosition == pisteLength + 3){
         newPosition = 2
     }
-    else if (newPosition == 34){
+    else if (newPosition == pisteLength + 4){
         newPosition = 3
     }
-    else if (newPosition == 35){
+    else if (newPosition == pisteLength + 5){
         newPosition = 4
     }
-    else if (newPosition == 36){
+    else if (newPosition == pisteLength + 6){
         newPosition = 5
     }
-    else if (newPosition == 37){
+    else if (newPosition == pisteLength + 7){
         newPosition = 6
-    }
-    else if (newPosition == 38){
-        newPosition = 7
-    }
-    else if (newPosition == 39){
-        newPosition = 8
     }
     return newPosition
     }
@@ -53,43 +46,37 @@ const moveDownOne = (nextPisteLine, newPosition) => {
 
 const makeMove = (acrossValue, downValue) => {
     let startingPosition = 0
-    if (counter !== 0) {
-        counter = 0
-    }
-    for (i=0; i < pisteMap.length-downValue ; i++) {
-        newPosition = moveAlongThree(startingPosition, acrossValue)
-        finalPosition = moveDownOne(pisteMap[i+downValue], newPosition)
+    counter = 0
+
+    for (let i=0; i < pisteMap.length-downValue ; i+=downValue) {
+        let newPosition = moveAlongThree(startingPosition, acrossValue)
+        let finalPosition = moveDownOne(pisteMap[i + downValue], newPosition)
         if (finalPosition == '#') {
             counter = counter + 1
         }
         startingPosition = startingPosition + acrossValue
-        if (startingPosition == 31){
+        if (startingPosition == pisteLength + 1){
             startingPosition = 0
         }
-        else if (startingPosition == 32){
+        else if (startingPosition == pisteLength + 2){
             startingPosition = 1
         }
-        else if (startingPosition == 33){
+        else if (startingPosition == pisteLength + 3){
             startingPosition = 2
         }
-        else if (startingPosition == 34){
+        else if (startingPosition == pisteLength + 4){
             startingPosition = 3
         }
-        else if (startingPosition == 35){
+        else if (startingPosition == pisteLength + 5){
             startingPosition = 4
         }
-        else if (startingPosition == 36){
+        else if (startingPosition == pisteLength + 6){
             startingPosition = 5
         }
-        else if (startingPosition == 37){
+        else if (startingPosition == pisteLength + 7){
             startingPosition = 6
         }
-        else if (startingPosition == 38){
-            startingPosition = 7
-        }
-        else if (startingPosition == 39){
-            startingPosition = 8
-        }
+
     }
     return counter
 }
@@ -104,13 +91,5 @@ makeMove(7, 1)
 let forthNumber = counter
 makeMove(1, 2)
 let fifthNumber = counter
-
-
-
-console.log(firstNumber)
-console.log(secondNumber)
-console.log(thirdNumber)
-console.log(forthNumber)
-console.log(fifthNumber)
 
 console.log(firstNumber * secondNumber * thirdNumber * forthNumber * fifthNumber)
